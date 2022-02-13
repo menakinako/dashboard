@@ -10,7 +10,8 @@ const useStyles = makeStyles(theme=>({
         width:"80%",
         float:"right",
         [theme.breakpoints.down('md')]: {
-         width:"100%",
+         width:"100%", 
+         margin:0
          },
     },
     dialogBox:{
@@ -18,20 +19,19 @@ const useStyles = makeStyles(theme=>({
       height:"60vh"
     },
     left:{
-      marginLeft:-200,
+      marginLeft:-190,
       [theme.breakpoints.down('md')]: {
         marginLeft: 0,
        },
     },
-    text:{
-      width:"900px",  marginLeft:-200,
-      [theme.breakpoints.down('md')]: {
-        marginLeft:0,
-       width:"500px"
-       },
-    },
     subTitle:{
       textAlign:"left", display:"flex", marginLeft:-200,
+      [theme.breakpoints.down('md')]: {
+        marginLeft:0
+       },
+    },
+    wrapper:{
+      marginLeft:-190,
       [theme.breakpoints.down('md')]: {
         marginLeft:0
        },
@@ -61,13 +61,15 @@ const Admin =()=>{
     return(
         <Box>
         <Box className={classes.container}>
+          <Box className={classes.wrapper}>
           <Typography variant="h4" className={classes.subTitle}>Admin&nbsp;<span style={{marginTop:10}}><Typography>Learn more about setting admin account</Typography></span></Typography>
            <Box style={{display:"flex", marginTop:20}}>
-               <TextField id="outlined-basic" label="Search" variant="outlined" size="small" className={classes.text}/>
+               <TextField id="outlined-basic" label="Search" variant="outlined" size="small"style={{ width:"900px"}}/>
                <Button variant="outlined" size="small" style={{marginLeft:40}}><span><GetAppOutlinedIcon/></span>Export</Button>
                <Button variant="contained" size="small" style={{marginLeft:10}} onClick={openDialog}><span><PersonAddAltOutlinedIcon /></span>New User</Button>
            </Box> 
            <Typography className={classes.subTitle}>show 10 entries</Typography>
+           </Box>
           <Box style={{ marginTop: 50}} className={classes.left}>
       <Table sx={{ minWidth: 600 }} aria-label="simple table">
         <TableHead>

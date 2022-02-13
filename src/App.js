@@ -25,7 +25,7 @@ function App() {
       <BrowserRouter>
       <Switch>
         <Box className={classes.container}>
-      <Sidebar />
+        <Sidebar />
         <Box>
         <Route exact path="/" component={Home}/>
         <Route exact path="/Admin" component={Admin}/>
