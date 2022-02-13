@@ -24,6 +24,7 @@ function App() {
         <Box className={classes.container}>
       <Sidebar />
         <Box>
+        <Route exact path="/" component={Home}/>
         <Route exact path="/Admin" component={Admin}/>
         <Route exact path="/Refferals" component={Referrals}/>
         </Box>
