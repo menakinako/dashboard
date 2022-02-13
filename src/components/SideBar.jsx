@@ -17,7 +17,10 @@ import { useHistory, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles(theme=>({
     container:{
-        width:"20%"
+        width:"20%",
+        [theme.breakpoints.down('md')]: {
+          width:"100%",
+        },
     }
 }))
 

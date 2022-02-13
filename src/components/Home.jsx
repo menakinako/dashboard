@@ -4,7 +4,8 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles(theme=>({
     container:{
        display:"flex",
-       flexDirection:"row"
+       flexDirection:"row",
+    
     }
 }))
 

@@ -8,11 +8,33 @@ import { useState } from "react";
 const useStyles = makeStyles(theme=>({
     container:{
         width:"80%",
-        float:"right"
+        float:"right",
+        [theme.breakpoints.down('md')]: {
+         width:"100%",
+         },
     },
     dialogBox:{
       width:" 90vh",
       height:"60vh"
+    },
+    left:{
+      marginLeft:-200,
+      [theme.breakpoints.down('md')]: {
+        marginLeft: 0,
+       },
+    },
+    text:{
+      width:"900px",  marginLeft:-200,
+      [theme.breakpoints.down('md')]: {
+        marginLeft:0,
+       width:"500px"
+       },
+    },
+    subTitle:{
+      textAlign:"left", display:"flex", marginLeft:-200,
+      [theme.breakpoints.down('md')]: {
+        marginLeft:0
+       },
     }
 }))
 function createData(date, name, email, role) {
@@ -39,14 +61,14 @@ const Admin =()=>{
     return(
         <Box>
         <Box className={classes.container}>
-          <Typography variant="h4" style={{textAlign:"left", marginLeft:-200, display:"flex"}}>Admin&nbsp;<span style={{marginTop:10}}><Typography>Learn more about setting admin account</Typography></span></Typography>
+          <Typography variant="h4" className={classes.subTitle}>Admin&nbsp;<span style={{marginTop:10}}><Typography>Learn more about setting admin account</Typography></span></Typography>
            <Box style={{display:"flex", marginTop:20}}>
-               <TextField id="outlined-basic" label="Search" variant="outlined" size="small" style={{marginLeft:-200, width:"900px"}}/>
+               <TextField id="outlined-basic" label="Search" variant="outlined" size="small" className={classes.text}/>
                <Button variant="outlined" size="small" style={{marginLeft:40}}><span><GetAppOutlinedIcon/></span>Export</Button>
                <Button variant="contained" size="small" style={{marginLeft:10}} onClick={openDialog}><span><PersonAddAltOutlinedIcon /></span>New User</Button>
            </Box> 
-           <Typography style={{textAlign:"left", marginLeft:-200}}>show 10 entries</Typography>
-          <Box style={{marginLeft:-200, marginTop: 50}}>
+           <Typography className={classes.subTitle}>show 10 entries</Typography>
+          <Box style={{ marginTop: 50}} className={classes.left}>
       <Table sx={{ minWidth: 600 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -75,7 +97,7 @@ const Admin =()=>{
         </TableBody>
       </Table>
         </Box>
-        <Typography style={{textAlign:"left", marginLeft:-200}}>Showing 1 to 1 of 1 entries</Typography>
+        <Typography style={{textAlign:"left"}} className={classes.left}>Showing 1 to 1 of 1 entries</Typography>
         <Dialog open={open} >
         <DialogContent >
           <Box className={classes.dialogBox}>

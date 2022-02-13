@@ -11,7 +11,10 @@ import Sidebar from './components/SideBar';
 const useStyles = makeStyles(theme=>({
   container:{
      display:"flex",
-     flexDirection:"row"
+     flexDirection:"row",
+     [theme.breakpoints.down('md')]: {
+      flexDirection:"column",
+    },
   }
 }))
 
