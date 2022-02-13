@@ -11,8 +11,8 @@ const useStyles = makeStyles(theme=>({
         float:"right"
     },
     dialogBox:{
-      width:" 90vh",
-      height:"60vh"
+      width:" 100vh",
+      height:"70vh"
     }
 }))
 function createData(date, name, email, role) {
