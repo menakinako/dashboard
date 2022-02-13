@@ -17,12 +17,14 @@ const useStyles = makeStyles(theme=>({
 const Home =()=>{
     const classes = useStyles();
     const location = useLocation();
+    console.log(location.pathname)
     return(
         <Box className={classes.container}>
         <Sidebar />
-          <Box>
-           <Admin />
-          </Box>
+        <Box>
+        <Route exact path="/Admin" component={Admin}/>
+        <Route exact path="/Refferals" component={Referrals}/>
+        </Box>
         </Box>
     )
 }
